@@ -1,19 +1,43 @@
-//Debe escribir una cabecera de archivo con la plantilla CRC: Clase, Responsabilidad y Colaboracion
+#ifndef TABLERO_H
+#define TABLERO_H
 
-#ifndef SRC_TABLERO_H_
-#define SRC_TABLERO_H_
+#include <stdlib.h>
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cstdlib>
 
-class Tablero {
-private:
-    char** casillas;
-    int dimension;
-public:
-    Tablero();
-    Tablero(int n);
-    ~Tablero();
-    char getCasilla(int x, int y);
-    void setCasilla(int x, int y, char value);
-    int getDimension();
+using namespace std;
+
+class Tablero
+{
+	public:
+		
+		Tablero();
+		
+		int getDimension();
+		void imprimirTablero();
+		void crearTablero();
+		
+		void Preguntar();
+		void validar();
+		int getColumna();
+		int getFila();
+		
+	private:
+		
+		int** tablero; // Se  declara el Tablero 
+		int n,p;
+		int valores;
+		int tamano;
+		int dimension;
+		int numeroAleatorio;
+		 // son los numeros de las casillas a validar
+		
+		void setDimension(int tama);
+		void setColumna(int col);
+		void setFila(int fil);
+			
 };
 
-#endif /* SRC_TABLERO_H_ */
+#endif
